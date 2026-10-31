@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0986C1B9-5D3C-4E4A-AEDE-4470C6707ECC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ChessBoard.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ChessBoard">
+        <MSBuild Projects="ChessBoard.cbproj"/>
+    </Target>
+    <Target Name="ChessBoard:Clean">
+        <MSBuild Projects="ChessBoard.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ChessBoard:Make">
+        <MSBuild Projects="ChessBoard.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ChessBoard"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ChessBoard:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ChessBoard:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
