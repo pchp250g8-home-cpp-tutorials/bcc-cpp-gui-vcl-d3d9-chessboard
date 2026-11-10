@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnPaint = FormPaint
